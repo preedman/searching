@@ -17,72 +17,43 @@ package com.reedmanit.searching;
 
 /**
  *
- * @author Paul Reedman
- * Even in the average case, the algorithm's run time is O(N). 
- * If you add up the number of steps required to search for every item in the array, you get 1 + 2 + 3 + .... + N = N x (N + 1) / 2 
- * If you divide that total by N to get the average search time for all the N items, you get , which is still O(N).
+ * @author Paul Reedman 
+ * 
+ * Example of a Linear Search
+ * Generic Types are used so that function can accept any type that extends Comparable
+ * 
+ * Even in the average case, the algorithm's run time is
+ * O(N). If you add up the number of steps required to search for every item in
+ * the array, you get 1 + 2 + 3 + .... + N = N x (N + 1) / 2 If you divide that
+ * total by N to get the average search time for all the N items, you get ,
+ * which is still O(N).
+ * 
  */
 public class Linear {
-    
-    private Integer[] values;
-    private Integer target;
-    
-    public Linear(Integer[] theValues, Integer theTarget) {
-        
-        values = theValues;
-        target = theTarget;
-        
+
+    private Linear() {
+
     }
     
-    // Find the target item's index in the sorted array.
-    // If the item isn't in the array, return -1.
-    
-    public Integer search() {
+
+    public static <T extends Comparable<T>> Integer search(T[] array, T element) {
+
         
-        int stop = values.length - 1;
-        int r = -1;
-        
-        for(int i = 0; i < stop; i++ ) {
-            if (values[i] == target) {
-                r = i;
+        int r = -1;    // return index negative if not found
+        int count = 0;
+
+        for (T e : array) {
+
+            if (e.compareTo(element) == 0) { // if element matches want is in array
+                r = count;  // set return value to the index counter
                 break;
             }
-            
-            
+            count++;
+
         }
+
         return r;
     }
 
-    /**
-     * @return the values
-     */
-    public Integer[] getValues() {
-        return values;
-    }
-
-    /**
-     * @param values the values to set
-     */
-    public void setValues(Integer[] values) {
-        this.values = values;
-    }
-
-    /**
-     * @return the target
-     */
-    public Integer getTarget() {
-        return target;
-    }
-
-    /**
-     * @param target the target to set
-     */
-    public void setTarget(Integer target) {
-        this.target = target;
-    }
-    
-    
-    
-    
-    
+     
 }

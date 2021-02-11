@@ -21,4 +21,6 @@ package com.reedmanit.searching;
  */
 public class InterpolationSearch {
     
+    
+    
 }

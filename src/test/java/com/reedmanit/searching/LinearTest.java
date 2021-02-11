@@ -47,30 +47,42 @@ public class LinearTest {
     public void tearDown() {
     }
 
+    
+    
     @Test
-    public void testSearchPositive() {
-        System.out.println("search - positive");
+    public void testSearchGenericFoundInteger() {
+        System.out.println("Search - Generic - Found Integer");
+        
         Integer[] values = { 10, 25, 44, 67, 99, 200, 1, 3, 7, 9 };
         
-        
-        Linear instance = new Linear(values, 67);
-        Integer expResult = 3;
-        Integer result = instance.search();
+              
+        Integer expResult = 8;
+        Integer result = Linear.search(values, 7);
         assertEquals(expResult, result);
-        
     }
     
     @Test
-    public void testSearchNegative() {
-        System.out.println("search - positive");
-        Integer[] values = { 10, 25, 44, 67, 99, 200, 1, 3, 7, 9 };
+    public void testSearchGenericFoundString() {
+        System.out.println("Search - Generic - Found String ");
         
+        String[] values = { "apples", "pears", "oranges", "grapes", "lemons", "banannas", "apricots", "avocados" };
         
-        Linear instance = new Linear(values, 2000);
-        Integer expResult = -1;
-        Integer result = instance.search();
+              
+        Integer expResult = 3;
+        Integer result = Linear.search(values, "grapes");
         assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testSearchGenericNotFoundString() {
+        System.out.println("Search - Generic - Not Found String ");
         
+        String[] values = { "apples", "pears", "oranges", "grapes", "lemons", "banannas", "apricots", "avocados" };
+        
+              
+        Integer expResult = -1;
+        Integer result = Linear.search(values, "drink");
+        assertEquals(expResult, result);
     }
 
    
