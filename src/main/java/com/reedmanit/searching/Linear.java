@@ -35,7 +35,13 @@ public class Linear {
 
     }
     
-
+    /**
+     * 
+     * @param <T> any type that extends Comparable
+     * @param array of any type T
+     * @param element of any type T
+     * @return Integer
+     */
     public static <T extends Comparable<T>> Integer search(T[] array, T element) {
 
         
