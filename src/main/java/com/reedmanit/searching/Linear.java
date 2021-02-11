@@ -17,10 +17,10 @@ package com.reedmanit.searching;
 
 /**
  *
- * @author Paul Reedman 
+ * @author Paul Reedman <br> 
  * 
- * Example of a Linear Search
- * Generic Types are used so that function can accept any type that extends Comparable
+ * Example of a Linear Search <br>
+ * Generic Types are used so that function can accept any type that extends Comparable <br>
  * 
  * Even in the average case, the algorithm's run time is
  * O(N). If you add up the number of steps required to search for every item in
@@ -36,7 +36,11 @@ public class Linear {
     }
     
     /**
-     * 
+     * This function will search for the element in the array <br>
+     * It will return -1 if the element is not found <br>
+     * It will return a integer if the value is found <br>
+     * This will be the elements index in the array <br>
+     * <br>
      * @param <T> any type that extends Comparable
      * @param array of any type T
      * @param element of any type T
@@ -50,7 +54,7 @@ public class Linear {
 
         for (T e : array) {
 
-            if (e.compareTo(element) == 0) { // if element matches want is in array
+            if (e.compareTo(element) == 0) { // if element matches what is in array
                 r = count;  // set return value to the index counter
                 break;
             }
